@@ -13,7 +13,9 @@ TagManager:
   - Weapon
   - EnemyWeapon
   - MonsterSpawnPoint
-  - Enemy
+  - Body
+  - EnemyBody
+  - Battery
   layers:
   - Default
   - TransparentFX

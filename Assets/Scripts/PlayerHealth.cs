@@ -3,11 +3,11 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour, ITargetable
 {
-    public int maxHealth = 5;
+    public int maxHealth = 1;
     private int currentHealth;
     public Transform respawnPoint;
 
-    public float invulnerabilityDuration = 1f;  // ¹«Àû ½Ã°£ (ÃÊ)
+    public float invulnerabilityDuration = 3f;  // ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ (ï¿½ï¿½)
     private bool isInvulnerable = false;
 
     public Transform GetTransform() => transform;
@@ -22,7 +22,7 @@ public class PlayerHealth : MonoBehaviour, ITargetable
         if (isInvulnerable) return;
 
         currentHealth -= amount;
-        Debug.Log($"ÇÃ·¹ÀÌ¾î ÇÇÇØ: {currentHealth}");
+        Debug.Log($"ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½: {currentHealth}");
 
         if (currentHealth <= 0)
         {
@@ -36,7 +36,7 @@ public class PlayerHealth : MonoBehaviour, ITargetable
 
     private void Die()
     {
-        Debug.Log("ÇÃ·¹ÀÌ¾î »ç¸Á ¡æ ¸®½ºÆù");
+        Debug.Log("ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
         currentHealth = maxHealth;
 
         if (respawnPoint != null)
@@ -46,10 +46,10 @@ public class PlayerHealth : MonoBehaviour, ITargetable
         }
         else
         {
-            Debug.LogWarning("¸®½ºÆù À§Ä¡°¡ ÁöÁ¤µÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+            Debug.LogWarning("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾Ò½ï¿½ï¿½Ï´ï¿½.");
         }
 
-        StartCoroutine(InvulnerabilityTimer()); // ¸®½ºÆù ÈÄ¿¡µµ Àá½Ã ¹«Àû
+        StartCoroutine(InvulnerabilityTimer()); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ä¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
     private IEnumerator InvulnerabilityTimer()
