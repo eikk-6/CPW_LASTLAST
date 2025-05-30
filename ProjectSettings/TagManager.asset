@@ -6,16 +6,16 @@ TagManager:
   tags:
   - Projectile
   - Target
-  - Anchor
   - PlayerHand
-  - Destroyer
-  - DeathZone
   - Weapon
   - EnemyWeapon
   - MonsterSpawnPoint
   - Body
   - EnemyBody
   - Battery
+  - Enemy
+  - EnemyShield
+  - Shield
   layers:
   - Default
   - TransparentFX

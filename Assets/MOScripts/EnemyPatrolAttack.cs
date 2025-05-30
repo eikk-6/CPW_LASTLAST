@@ -6,15 +6,17 @@ public class EnemyPatrolAttack : MonoBehaviour
     public Transform player;
     public Transform battery;
     public Transform[] patrolPoints;
-    private int patrolIndex;
+
+    public SwordAttack leftSword;
+    public SwordAttack rightSword;
 
     private NavMeshAgent agent;
     private float distanceToTarget;
+    private int patrolIndex;
+    private Transform currentTarget;
 
     public float attackRange = 2f;
     public float chaseRange = 10f;
-
-    private Transform currentTarget;
 
     private void Start()
     {
@@ -34,7 +36,7 @@ public class EnemyPatrolAttack : MonoBehaviour
         float distToPlayer = Vector3.Distance(transform.position, player.position);
         float distToBattery = Vector3.Distance(transform.position, battery.position);
 
-        // 더 가까운 대상 선택
+        // 가까운 대상 선택
         if (distToPlayer < distToBattery)
         {
             currentTarget = player;
@@ -50,6 +52,10 @@ public class EnemyPatrolAttack : MonoBehaviour
         {
             agent.isStopped = true;
             Debug.Log("공격!! 대상: " + currentTarget.name);
+
+            // 👇 두 개의 검 휘두르기
+            if (leftSword != null) leftSword.Attack();
+            if (rightSword != null) rightSword.Attack();
         }
         else if (distanceToTarget <= chaseRange)
         {

@@ -3,25 +3,52 @@ using UnityEngine;
 public class WeaponController : MonoBehaviour
 {
     public Transform playerTransform;
+    public string ownerTag = "Player"; // "Player" or "Enemy"
 
     private void OnTriggerEnter(Collider other)
     {
         // 상대 무기와 충돌 시
-        if (other.CompareTag("EnemyWeapon"))
+        if (ownerTag == "Player" && other.CompareTag("EnemyWeapon"))
         {
-            PushBack(other.transform.position);
+            PushBackIfNotSelf(other);
+        }
+        else if (ownerTag == "Enemy" && other.CompareTag("Weapon"))
+        {
+            PushBackIfNotSelf(other);
+        }
+
+        // 상대 방패와 충돌 시
+        if (ownerTag == "Player" && other.CompareTag("EnemyShield"))
+        {
+            PushBackIfNotSelf(other);
+        }
+        else if (ownerTag == "Enemy" && other.CompareTag("Shield"))
+        {
+            PushBackIfNotSelf(other);
         }
     }
 
-    public void PushBack(Vector3 hitPoint) //무기 사용 플레이어 뒤로 밀려남
+    private void PushBackIfNotSelf(Collider other)
+    {
+        if (other.transform.root == playerTransform.root)
+        {
+            // 내 무기/방패랑 충돌했으므로 무시
+            return;
+        }
+
+        PushBack(other.transform.position);
+    }
+
+    public void PushBack(Vector3 hitPoint)
     {
         if (playerTransform == null) return;
 
         Vector3 direction = (playerTransform.position - hitPoint).normalized;
-        Vector3 pushPosition = playerTransform.position + direction * 1.5f;
+        direction.y = 0f;
 
+        Vector3 pushPosition = playerTransform.position + direction * 1.5f;
         playerTransform.position = pushPosition;
 
-        Debug.Log("Player pushed back by enemy weapon!");
+        Debug.Log($"{ownerTag} pushed back by enemy!");
     }
 }

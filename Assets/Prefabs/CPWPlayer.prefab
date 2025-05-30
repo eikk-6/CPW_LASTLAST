@@ -16467,7 +16467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3441780664
+  GlobalObjectIdHash: 4192605601
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -22698,10 +22698,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8503432368761365104}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 44a8a7db97191374d9a231772e72545d,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4225585903821066950}
   m_SourcePrefab: {fileID: 100100000, guid: 44a8a7db97191374d9a231772e72545d, type: 3}
 --- !u!1 &2569882730012146068 stripped
 GameObject:
@@ -22730,19 +22726,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.08711574, y: 2.1506786, z: 0.12623976}
   m_Center: {x: 1.2232397, y: 1.9139166, z: -0.0025830474}
---- !u!114 &4225585903821066950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2569882730012146068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caa086d054bd7874fb18403e4c6f8ee5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTransform: {fileID: 2919842481773566324}
 --- !u!4 &2945879820543238958 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 44a8a7db97191374d9a231772e72545d,
