@@ -20,6 +20,10 @@ public class BatteryHealth : MonoBehaviour
             {
                 batteryHp -= 1;
                 lastDamageTime = Time.time;
+
+                var effectPlayer = FindObjectOfType<EffectPlayer>();
+                effectPlayer?.PlayEffect(transform.position, "Battery");
+                
                 Debug.Log("My Battery hit! Current HP: " + batteryHp);
 
                 if (batteryHp <= 0)

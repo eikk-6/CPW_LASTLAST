@@ -19,10 +19,10 @@ EditorBuildSettings:
     guid: b9586b540592c8647a4736c022403a74
   - enabled: 1
     path: Assets/Scenes/Scene_Char2.unity
-    guid: 06d3740acc9d2054bbfc09d62c772f54
+    guid: d2c5027352047b8458a46dbcf970dc6f
   - enabled: 1
     path: Assets/Scenes/Scene_Char3.unity
-    guid: c0be86141778f0c44a1d7b44d590007b
+    guid: c40b2e3d7de479047ba6dae2e9019af4
   - enabled: 1
     path: Assets/Scenes/EndingScene.unity
     guid: b622a06a550efeb45914d0423f2054b0

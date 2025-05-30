@@ -37,6 +37,9 @@ public class WeaponController : MonoBehaviour
         }
 
         PushBack(other.transform.position);
+
+        var effectPlayer = FindObjectOfType<EffectPlayer>(); //이펙트 재생
+        effectPlayer?.PlayEffect(transform.position, "Sword");
     }
 
     public void PushBack(Vector3 hitPoint)

@@ -17,4 +17,9 @@ public class VRSceneSelector : MonoBehaviour
     {
         SceneManager.LoadScene("Scene_Char3");
     }
+
+    public void LoadSceneWin()
+    {
+        SceneManager.LoadScene("CPWMainScene");
+    }
 }

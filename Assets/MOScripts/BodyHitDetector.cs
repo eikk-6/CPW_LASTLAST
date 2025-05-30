@@ -13,6 +13,9 @@ public class BodyHitDetector : MonoBehaviour
     {
         if (other.CompareTag("EnemyWeapon"))
         {
+            var effectPlayer = FindObjectOfType<EffectPlayer>();
+            effectPlayer?.PlayEffect(transform.position, "Body");
+            
             respawnHandler?.TriggerRespawn();
         }
     }

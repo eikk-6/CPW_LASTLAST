@@ -17,6 +17,8 @@ public class MonsterHitReceiver : MonoBehaviour
     {
         if (other.CompareTag("Weapon"))
         {
+            var effectPlayer = FindObjectOfType<EffectPlayer>();
+            effectPlayer?.PlayEffect(transform.position, "Body");
             respawnScript?.HandleHit();
         }
     }
